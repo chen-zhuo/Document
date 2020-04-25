@@ -84,7 +84,6 @@ docsify init ./docs
   <script>
     window.$docsify = {
       name: '',
-      repo: ''
     }
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
@@ -169,6 +168,14 @@ docsify 扩展了一些 Markdown 语法，可以让文档更易读。
 ```
 
 !> 一段重要的内容，可以和其他 **Markdown** 语法混用。
+
+普通提示：普通的提示信息，语法为 `?> 内容`。
+
+```
+?> _TODO_ 完善示例
+```
+
+?> *_TODO_* 完善示例
 
 **图片缩放**：在图片路径后面`'空格:size=宽度x高度'`，即可调整图片展示大小。
 
@@ -333,7 +340,7 @@ window.$docsify = {
 
 ![QQ截图20200421230208](image/QQ截图20200421230208.png)
 
-### 插件
+### 插件列表
 
 ##### 全文搜索
 
@@ -398,7 +405,7 @@ window.$docsify = {
 <script src="//unpkg.com/prismjs/components/prism-php.js"></script>
 ```
 
-##### 数学公式渲染
+##### 公式渲染
 
 *KaTeX* 数学公式渲染库：
 

@@ -1,7 +1,6 @@
 - Document目录
 
-	- [*快捷键*](/01-快捷键.md)
-
-* 123
-  * 654
+	- [Markdown语法](Markdown语法.md)
+	- [GitHub平台](GitHub平台.md)
+	- [Git版本控制](Git版本控制.md)
 

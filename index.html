@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <!--网页名称-->
   <title>Document</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
@@ -9,25 +10,53 @@
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
 </head>
 <body>
-  <div id="app"></div>
+  <!--等待加载的显示内容-->
+  <div id="app">加载中...</div>
   <script>
     window.$docsify = {
+      <!--边侧栏标题-->
       name: '文档写作',
+      <!--加载边侧栏-->
       loadSidebar: true,
+      <!--标题显示等级-->
       subMaxLevel: 5,
-      alias: {
-        '/.*/_sidebar.md': '/_sidebar.md'
-      }
+      <!--Corner 挂件-->
+      repo: 'https://github.com/chen-zhuo',
+      <!--导航栏-->
+      loadNavbar: true,
+      <!--夜晚模式-->
+      darkMode: {
+        light: {
+          toggleBtnBg: '#42b983'
+        }
+      },
+      <!--基金标签-->
+      plugins: [
+        DocsifyCodefund.create('fae1f9a4-870c-4c25-b8e0-c80464f7a95c')
+      ],
     }
   </script>
-  <!-- CDN files for docsify-katex -->
+  <!--基础框架-->
+  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <!--边侧栏-->
+  <script src="//unpkg.com/docsify"></script>
+  <!--搜索-->
+  <script src="//unpkg.com/docsify/lib/plugins/search.js"></script>
+  <!--图片展示-->
+  <script src="//unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
+  <!--Python代码高亮-->
+  <script src="//unpkg.com/prismjs/components/prism-python.js"></script>
+  <!--go代码高亮-->
+  <script src="//unpkg.com/prismjs/components/prism-go.js"></script>
+  <!--sql语句高亮-->
+  <script src="//unpkg.com/prismjs/components/prism-sql.js"></script>
+  <!--封面-->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+  <!--解析表情符-->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+  <!--基金标签-->
+  <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
+  <!--数学公式渲染-->
   <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
-  <!-- or <script src="//cdn.jsdelivr.net/gh/upupming/docsify-katex/dist/docsify-katex.js"></script> -->
-  <link
-    rel="stylesheet"
-    href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"
-  />
-  <!-- Put them above docsify.min.js -->
-  <script src="//cdn.jsdelivr.net/npm/docsify@latest/lib/docsify.min.js"></script>
 </body>
 </html>

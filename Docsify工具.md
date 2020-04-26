@@ -1,6 +1,6 @@
-# Docsify
+# Docsify工具
 
-### 初始Docsify
+### 初识Docsify
 
 ##### docsify简介
 
@@ -254,9 +254,7 @@ window.$docsify = {
 
 ![QQ截图20191201160057](image/QQ截图20191201160057.png)
 
-##### 文档标题
-
-文档标题，会显示在侧边栏顶部。
+边侧栏标题，会显示在侧边栏顶部。
 
 ```html
   <script>
@@ -373,12 +371,12 @@ window.$docsify = {
 
 ##### 基金标签
 
-在边侧栏上还可以添加基金标签，每次打开页面，标签会自动变化。
+通过基金标签ID，在边侧栏上还可以添加基金标签，每次打开页面，标签会自动变化。
 
 ```html
 window.$docsify = {
   plugins: [
-    DocsifyCodefund.create('fae1f9a4-870c-4c25-b8e0-c80464f7a95c') //基金标签id
+    DocsifyCodefund.create('fae1f9a4-870c-4c25-b8e0-c80464f7a95c') 
   ]
 }
 <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
@@ -410,8 +408,8 @@ window.$docsify = {
 *KaTeX* 数学公式渲染库：
 
 ```html
-<script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"/>
+<script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
 ```
 
 ##### 主题
@@ -429,19 +427,65 @@ window.$docsify = {
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/pure.css">
 ```
 
-### 个人模板
+### 代码部署
 
-结合上面的功能，拼凑出适用 *Github Page* 的网页代码：
+##### 我的封面
 
-##### 个人主页
+加载封面`index.html`文件：
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!--网页名称-->
+  <title>Home</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+</head>
+<body>
+  <!--等待加载的显示内容-->
+  <div id="app">加载中...</div>
+<script>
+  window.$docsify = {
+    <!--加载封面-->
+    coverpage: true
+  }
+</script>
+  <!--基础框架-->
+  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <!--封面-->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+</body>
+</html>
+```
+
+封面的主要内容是加载`_coverpage.md`文件，我的封面文件：
+
+```html
+![logo](image/avatar.jpg)
+
+# JackChen
+
+> 但行好事，莫问前程！
+
+* Document知识库：Markdown语法、GitHub平台、Git版本控制、Docsify工具
+* Python知识库：Python语法基础、Spider网络爬虫等
+* Database知识库：数据库基础、MySQL、MongoDB、Redis等
+* Math知识库：符号排版、高等数学等
+* Go知识库：建设中。。。
+* System知识库：建设中。。。
+* Internet知识库：建设中。。。
+
+[Document](https://chen-zhuo.github.io/Document/) [Python](https://chen-zhuo.github.io/Python/) [Database](https://chen-zhuo.github.io/Database/) [Math](https://chen-zhuo.github.io/Math/) [GitHub](https://github.com/chen-zhuo)
+```
+
+##### 我的仓库
+
+结合上面的功能，拼凑出适用展示于各个仓库的网页代码：
 
 ```html
 
 ```
-
-##### 仓库主页
-
-```html
-
-```
-

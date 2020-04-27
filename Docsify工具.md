@@ -464,10 +464,10 @@ window.$docsify = {
 
 封面的主要内容是加载`_coverpage.md`文件，我的封面文件：
 
-```html
+```
 ![logo](image/avatar.jpg)
 
-# JackChen
+# chen-zhuo
 
 > 但行好事，莫问前程！
 

@@ -415,6 +415,8 @@ window.$docsify = {
 <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
 ```
 
+!> 若文档中，连续使用转义符 `\` 和 `，可能会导致 *KaTeX* 不能正确渲染数学公式。
+
 ##### 主题
 
 官方提供了4套主题，可任意选择：
@@ -432,9 +434,11 @@ window.$docsify = {
 
 ### 代码部署
 
+代码部署也很简单，只要 *GitHub* 的仓库开启了 *GutHub Page* ，把自定义好的`index.html`、`_coverpage.md` 等文件上传到 *GitHub* 的仓库中，即可在 *GutHub Page* 中展示内容。
+
 ##### 我的封面
 
-加载封面`index.html`文件：
+封面加载的`index.html`文件：
 
 ```html
 <!DOCTYPE html>
@@ -442,7 +446,7 @@ window.$docsify = {
 <head>
   <meta charset="UTF-8">
   <!--网页名称-->
-  <title>Home Page</title>
+  <title>Chen-Zhuo</title>
   <!--网页小图标-->
   <link rel="icon" href="https://chen-zhuo.github.io/image/avatar.jpg">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -467,7 +471,7 @@ window.$docsify = {
 </html>
 ```
 
-封面的主要内容是加载`_coverpage.md`文件，我的封面文件：
+封面的主要内容是加载 `_coverpage.md` 文件，我的封面文件：
 
 ```
 ![logo](image/avatar.jpg)
@@ -489,7 +493,7 @@ window.$docsify = {
 
 ##### 我的仓库
 
-结合上面的功能，拼凑出适用展示于各个仓库的网页代码：
+结合上面的功能，拼凑出适用展示我的各个仓库的网页代码（**仓库没有设置封面页**）：
 
 ```html
 <!DOCTYPE html>

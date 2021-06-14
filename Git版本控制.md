@@ -372,7 +372,7 @@ $ git pull --rebase origin 要拉取的线上分支名称
 
 # 若本地分支有改动，需要先提交到历史区，否则会拉取失败
 error: cannot pull with rebase: You have unstaged changes.
-
+```
 这里成功拉取了线上的master分支，将前面在本地new分支中的修改更新到了本地的master分支中。
 
 ![QQ截图20210614053751](image/QQ截图20210614053751.png)
@@ -421,8 +421,8 @@ git config --global core.excludesfile ~/.gitignore
 git rm -r --cached .
 git add .
 git commit -m "msg"
-
-`.gitignore` 文件示例：
+```
+Python项目 `.gitignore` 文件示例：
 
 ```
 venv
@@ -441,7 +441,7 @@ __pycache__
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
 .history
-
+```
 ##### 身份认证
 
 每一次更新远程库需要进行登录，就显得很繁琐，我们就需要 *SSH Key* 来进行身份认证，不必每次登录。

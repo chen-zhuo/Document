@@ -376,7 +376,7 @@ error: cannot pull with rebase: You have unstaged changes.
 ```
 # 分支改名（将master改名为new_master）
 git branch -m master new_master
-
+```
 ![QQ截图20210616004424](image/QQ截图20210616004424.png)
 
 ### 进阶操作

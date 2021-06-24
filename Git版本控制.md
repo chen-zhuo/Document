@@ -239,7 +239,7 @@ git branch
 git branch 新建分支名称
 
 # 新建分支并切换到新建分支
-git branch -b 新建分支名称
+git checkout -b 新建分支名称
 ```
 
 **在分支A中新建分支B，分支B就是分支A的拷贝版。**

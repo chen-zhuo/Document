@@ -436,10 +436,10 @@ Typora的强大不仅仅在于能编辑Markdown、加载图片等，甚至还可
 例如用html代码写一个小号字体：
 
 ```html
-<font size='4'>随便写写</font>
+<font size='1'>随便写写</font>
 ```
 
-<font size='4'>随便写写</font>
+<font size='1'>随便写写</font>
 
 例如用html代码写一个红色的字体：
 

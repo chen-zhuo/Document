@@ -99,10 +99,12 @@ docsify init ./docs
 运行一个本地服务器通过 `docsify serve` 可以方便的预览效果，而且提供 LiveReload 功能，可以让实时的预览。默认访问 [http://localhost:3000](http://localhost:3000/) 。
 
 ```
-docsify serve docs
+docsify serve 项目文件夹名称
 ```
 
 ![QQ截图20210708000909](image/QQ截图20210708000909.png)
+
+?> cmd也可以执行该命名，注意执行命令的位置在项目文件夹的同级位置。
 
 ### 基础展示
 

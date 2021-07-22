@@ -202,7 +202,11 @@ git push 连接名称 master
 克隆 *GitHub* 仓库到本地
 
 ```
+# 克隆master主分支
 git clone 仓库地址
+
+# 克隆其他分支
+git clone -b 分支名称 仓库地址 
 ```
 
 ![QQ截图20190420150559](image/QQ截图20190420150559.png)
@@ -377,7 +381,7 @@ git branch -D 要删除的分支名称
 
 ```
 # 拉取线上分支
-$ git pull --rebase origin 要拉取的线上分支名称
+git pull --rebase origin 要拉取的线上分支名称
 
 # 若本地分支有改动，需要先提交到历史区，否则会拉取失败
 error: cannot pull with rebase: You have unstaged changes.
@@ -393,6 +397,23 @@ error: cannot pull with rebase: You have unstaged changes.
 git branch -m master new_master
 ```
 ![QQ截图20210616004424](image/QQ截图20210616004424.png)
+
+##### 解决冲突
+
+冲突产生过程：甲乙两人都克隆了线上同一个分支，甲修改了A文件，并进行了提交合并线上分支，这个时候线上分支有甲的修改，乙的分支就和线上不一样了。这个时候乙也修改了A文件，进行提交就会报错，因为一个文件不可能有甲修改版和乙修改版，因此乙就需要解决冲突。
+
+```
+# 拉取一次线上分支
+git pull --rebase origin 线上分支名称
+
+# 查看冲突地方
+git diff
+
+# 解决冲突后进行提交
+git add .
+git rebase --continue
+git push -f origin 要提交的分支名称
+```
 
 ### 进阶操作
 

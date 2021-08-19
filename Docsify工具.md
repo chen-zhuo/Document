@@ -1,12 +1,12 @@
 # Docsify工具
 
-### 初识Docsify
+## 初识Docsify
 
-##### docsify简介
+### docsify简介
 
 [docsify](https://docsify.js.org/#/zh-cn/?id=docsify) **是一个动态生成文档网站的工具**。不同于 GitBook、Hexo 的地方是它不会生成将 `.md` 转成 `.html` 文件，所有转换工作都是在运行时进行。
 
-##### 特性
+### 特性
 
 - 无需构建，写完文档直接发布
 - 容易使用并且轻量 (~19kB gzipped)
@@ -17,9 +17,9 @@
 - 兼容 IE10+
 - 支持 SSR ([example](https://github.com/docsifyjs/docsify-ssr-demo))
 
-### 准备工作
+## 准备工作
 
-##### 下载安装Node.js
+### 下载安装Node.js
 
 **[Node.js](https://nodejs.org/zh-cn/)一个基于 Chrome V8 引擎的 JavaScript 运行环境**
 
@@ -36,7 +36,7 @@
 
 ![QQ截图20200419025015](image/QQ截图20200419025015.png)
 
-##### 安装`docsify-cli`
+### 安装docsify-cli
 
  `docsify-cli` 工具可以**方便创建及本地预览文档网站**。
 
@@ -44,7 +44,7 @@
 npm i docsify-cli -g
 ```
 
-##### 初始化项目
+### 初始化项目
 
 在项目的 `./docs` 目录里写文档，直接通过 `init` 初始化项目。
 
@@ -94,7 +94,7 @@ docsify init ./docs
 
 3. 新建一个名称为 `README` 的 md 文件。
 
-##### 本地预览
+### 本地预览
 
 运行一个本地服务器通过 `docsify serve` 可以方便的预览效果，而且提供 LiveReload 功能，可以让实时的预览。默认访问 [http://localhost:3000](http://localhost:3000/) 。
 
@@ -106,9 +106,9 @@ docsify serve 项目文件夹名称
 
 ?> cmd也可以执行该命名，注意执行命令的位置在项目文件夹的同级位置。
 
-### 基础展示
+## 基础展示
 
-##### 网页名称
+### 网页名称
 
 ```html
 <title>网页标签名称</title>
@@ -116,9 +116,7 @@ docsify serve 项目文件夹名称
 
 ![QQ截图20191201163402](image/QQ截图20191201163402.png)
 
-##### 封面
-
-**注意：一个文档站点只能有一个封面，即一个仓库一个封面！**
+### 封面
 
 通过修改 `index.html` 文件，设置 `coverpage` 为 `true` 来激活封面功能。
 
@@ -161,36 +159,9 @@ docsify serve 项目文件夹名称
 ![color](#f0f0f0)
 ```
 
-##### Markdown 扩展
+!> **注意：一个文档站点只能有一个封面，即一个仓库一个封面！**
 
-docsify 扩展了一些 Markdown 语法，可以让文档更易读。
-
-**强调内容**：适合显示重要的提示信息，语法为 `!> 内容`。
-
-```
-!> 一段重要的内容，可以和其他 **Markdown** 语法混用。
-```
-
-!> 一段重要的内容，可以和其他 **Markdown** 语法混用。
-
-普通提示：普通的提示信息，语法为 `?> 内容`。
-
-```
-?> _TODO_ 完善示例
-```
-
-?> *_TODO_* 完善示例
-
-**图片缩放**：在图片路径后面`'空格:size=宽度x高度'`，即可调整图片展示大小。
-
-```
-![logo](https://docsify.js.org/_media/icon.svg ':size=50x100')
-![logo](https://docsify.js.org/_media/icon.svg ':size=100')    即size=100x100
-```
-
-![QQ截图20200425144721](image/QQ截图20200425144721.png)
-
-##### Corner 挂件
+### Corner 挂件
 
 通过修改 `index.html` 文件配置 `repo` 的字符串，会在页面右上角渲染一个 GitHub Corner 挂件。
 
@@ -202,7 +173,7 @@ window.$docsify = {
 
 ![QQ截图20200419234202](image/QQ截图20200419234202.png)
 
-##### Loading 提示
+### Loading 提示
 
 页面加载时默认会显示 `Loading...` 内容，当然你可以自定义提示信息。
 
@@ -214,9 +185,40 @@ window.$docsify = {
 
 ![QQ截图20200419233717](image/QQ截图20200419233717.png)
 
-### 添加功能
+### 强调内容
 
-##### 边侧栏
+docsify 扩展了一些 Markdown 语法，可以让文档更易读。
+
+普通提示：普通的提示信息，语法为 `?> 提示内容`。
+
+```
+?> _TODO_ 完善示例
+```
+
+?> *_TODO_* 完善示例
+
+重要提示：适合显示重要的提示信息，语法为 `!> 提示内容`。
+
+```
+!> 一段重要的内容，可以和其他 **Markdown** 语法混用。
+```
+
+!> 一段重要的内容，可以和其他 **Markdown** 语法混用。
+
+### 图片缩放
+
+在图片路径后面`'空格:size=宽度x高度'`，即可调整图片展示大小：
+
+```
+![logo](https://docsify.js.org/_media/icon.svg ':size=50x100')
+![logo](https://docsify.js.org/_media/icon.svg ':size=100')    即size=100x100
+```
+
+![QQ截图20200425144721](image/QQ截图20200425144721.png)
+
+## 添加功能
+
+### 边侧栏
 
 首先在 `index.html` 文件中配置 `loadSidebar` 选项：
 
@@ -271,7 +273,7 @@ window.$docsify = {
 
 ![QQ截图20191201164619](image/QQ截图20191201164619.png)
 
-##### 内容标题
+### 内容标题
 
 文件名称我们已经能在边侧栏中展示了，**展示文件的里面的标题**就需要设置 `subMaxLevel` 配置项了。
 
@@ -289,7 +291,7 @@ window.$docsify = {
 
 ![QQ截图20191201165353](image/QQ截图20191201165353.png)
 
-##### 导航栏
+### 导航栏
 
 导航栏的配置与边侧栏类似，在 `index.html` 文件中配置 `loadNavbar` 选项：
 
@@ -324,7 +326,7 @@ window.$docsify = {
 
 ![QQ截图20200419225901](image/QQ截图20200419225901.png)
 
-##### 夜晚模式
+### 夜晚模式
 
 在`index.html`中添加`darkMode`，可调节背景颜色。
 
@@ -342,9 +344,9 @@ window.$docsify = {
 
 ![QQ截图20200421230208](image/QQ截图20200421230208.png)
 
-### 插件列表
+## 插件列表
 
-##### 全文搜索
+### 全文搜索
 
 全文搜索插件会**根据当前页面上的超链接获取文档内容**，在 `localStorage` 内建立文档索引。默认过期时间为一天，当然我们可以自己指定需要缓存的文件列表或者配置过期时间。
 
@@ -365,7 +367,7 @@ window.$docsify = {
 <script src="//unpkg.com/docsify/lib/plugins/search.js"></script>
 ```
 
-##### 表情符号
+### 表情符号
 
 默认为支持解析表情符号，例如`:100:`将解析为:100:，则需要安装此插件。
 
@@ -373,9 +375,9 @@ window.$docsify = {
 <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
 ```
 
-##### 基金标签
+### 基金标签
 
-通过基金标签ID，在边侧栏上还可以添加基金标签，每次打开页面，标签会自动变化。
+通过基金标签ID，在边侧栏上还可以添加基金标签，每次打开页面，标签会自动变化（目前失效，但官网有更新）。
 
 ```html
   <!--基金标签-->
@@ -392,15 +394,7 @@ window.$docsify = {
 
 ![QQ截图20200421224848](image/QQ截图20200421224848.png)
 
-##### 图片展示
-
-图片展示插件基于 [medium-zoom](https://github.com/francoischalifour/medium-zoom)，点击图片可单独展示。
-
-```html
-<script src="//unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
-```
-
-##### 代码高亮
+### 代码高亮
 
 内置的代码高亮工具是 [Prism](https://github.com/PrismJS/prism)，默认支持 CSS、JavaScript 和 HTML。如果需要高亮其语言——例如 PHP——可以手动引入代码高亮插件。
 
@@ -410,18 +404,16 @@ window.$docsify = {
 <script src="//unpkg.com/prismjs/components/prism-php.js"></script>
 ```
 
-##### 公式渲染
+### 公式渲染
 
-*KaTeX* 数学公式渲染库：
+KaTeX 数学公式渲染库：
 
 ```html
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"/>
 <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
 ```
 
-!> 若文档中，连续使用转义符 `\` 和 `，可能会导致 *KaTeX* 不能正确渲染数学公式。
-
-##### 主题
+### 主题
 
 官方提供了4套主题，可任意选择：
 
@@ -436,11 +428,11 @@ window.$docsify = {
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/pure.css">
 ```
 
-### 代码部署
+## 代码部署
 
-代码部署也很简单，只要 *GitHub* 的仓库开启了 *GutHub Page* ，把自定义好的`index.html`、`_coverpage.md` 等文件上传到 *GitHub* 的仓库中，即可在 *GutHub Page* 中展示内容。
+代码部署也很简单，只要 GitHub 的仓库开启了 GutHub Page ，把自定义好的`index.html`、`_coverpage.md` 等文件上传到 GitHub 的仓库中，即可在 GutHub Page 中展示内容。
 
-##### 我的封面
+### 我的封面
 
 封面加载的`index.html`文件：
 
@@ -451,7 +443,7 @@ window.$docsify = {
   <meta charset="UTF-8">
   <!--网页名称-->
   <title>Chen-Zhuo</title>
-  <!--网页小图标-->
+  <!--网页前面的小图标-->
   <link rel="icon" href="https://chen-zhuo.github.io/image/avatar.jpg">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
@@ -463,7 +455,6 @@ window.$docsify = {
   <div id="app">加载中...</div>
 <script>
   window.$docsify = {
-    <!--加载封面-->
     coverpage: true
   }
 </script>
@@ -480,30 +471,32 @@ window.$docsify = {
 ```
 ![logo](image/avatar.jpg)
 
-# Chen-Zhuo
+<font size="10">Chen-Zhuo</font>
 
 > 但行好事，莫问前程！
 
 * Document知识库：Markdown语法、GitHub平台、Git版本控制、Docsify工具
-* Python知识库：Python语法基础、Spider网络爬虫
-* DataBase知识库：MySQL数据库、MongoDB数据库、Redis数据库
+* Python知识库：Python语言基础、Spider网络爬虫、Web后端开发
+* JavaScript知识库：JavaScript语言基础
+* DataBase知识库：MySQL数据库、Redis数据库
+* System知识库：DOS批处理、Linux系统
 * Math知识库：符号排版
-* Go知识库：建设中。。。
 
-[Document](https://chen-zhuo.github.io/Document/) [Python](https://chen-zhuo.github.io/Python/) [DataBase](https://chen-zhuo.github.io/DataBase/) [Math](https://chen-zhuo.github.io/Math/) [GitHub](https://github.com/chen-zhuo)
+[Document](https://chen-zhuo.github.io/Document/) [Python](https://chen-zhuo.github.io/Python/) [JavaScript](https://chen-zhuo.github.io/JavaScript/) [DataBase](https://chen-zhuo.github.io/DataBase/) [System](https://chen-zhuo.github.io/System/) [Math](https://chen-zhuo.github.io/Math/) [GitHub](https://github.com/chen-zhuo)
 ```
 
-##### 我的仓库
+### 我的仓库
 
 结合上面的功能，拼凑出适用展示我的各个仓库的网页代码（**仓库没有设置封面页**）：
 
 ```html
+  
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <!--网页名称-->
-  <title>...</title>
+  <title>Python</title>
   <!--网页小图标-->
   <link rel="icon" href="https://chen-zhuo.github.io/image/avatar.jpg">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -515,8 +508,6 @@ window.$docsify = {
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-dark-mode@0.6.1/dist/style.css"/>
   <!--数学符号样式-->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"/>
-  <!--基金标签-->
-  <script src="//cdn.jsdelivr.net/npm/docsify-plugin-codefund/index.js"></script>
 </head>
 <body>
   <!--等待加载的显示内容-->
@@ -524,7 +515,7 @@ window.$docsify = {
   <script>
     window.$docsify = {
       <!--边侧栏标题-->
-      name: '...',
+      name: 'Python',
       <!--加载导航栏-->
       loadNavbar: true,
       <!--加载边侧栏-->
@@ -543,11 +534,7 @@ window.$docsify = {
       search: {
       placeholder: '搜索', //搜索框默认显示的内容
       noData: '没有结果！', //没有查询结果的显示内容
-      },
-      <!--基金标签-->
-      plugins: [
-      DocsifyCodefund.create('fae1f9a4-870c-4c25-b8e0-c80464f7a95c')
-     ]
+      }
     }
   </script>
   <!--基础框架-->
@@ -558,8 +545,6 @@ window.$docsify = {
   <script src="//unpkg.com/docsify/lib/plugins/search.js"></script>
   <!--表情符解析-->
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
-  <!--图片展示-->
-  <script src="//unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
   <!--python代码高亮-->
   <script src="//unpkg.com/prismjs/components/prism-python.js"></script>
   <!--go代码高亮-->
@@ -577,3 +562,16 @@ window.$docsify = {
 </body>
 </html>
 ```
+
+### 我的踩坑
+
+坑1：文档中转义符 \ 和 `在一起使用，会导致 KaTeX 不能正确渲染数学公式。
+
+坑2：文档中加粗符号**和`在一起使用若后面有字符，会导致文档不能正确渲染。
+
+![QQ截图20210819115702](image/QQ截图20210819115702.png)
+
+坑3：文档中大标题中的小标题不能越级，否则标题栏不能显示出层次。
+
+![QQ截图20210819112321](image/QQ截图20210819112321.png)![QQ截图20210819113212](image/QQ截图20210819113212.png)
+

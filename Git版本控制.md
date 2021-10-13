@@ -178,13 +178,13 @@ git remote rename 连接名称 新连接名称
 
 ```
 # 同步前之前最好先拉取
-git pull 连接名称 master
+git pull 连接名称 分支名称
 
 # 如果本地仓库有修改，上面命令可能报错，就可以用这条命令在本地合并两个仓库。
-git pull --rebase 连接名称 master
+git pull --rebase 连接名称 分支名称
 
 # 上传文件
-git push 连接名称 master
+git push 连接名称 分支名称
 ```
 
 ![QQ截图20191124183146](image/QQ截图20191124183146.png)
@@ -225,7 +225,7 @@ dev（开发分支）
 ...（其他分支）
 ```
 
-!> 注意：无论有多少个分支，都必须有一个主分支，名称通常为master， 连接名称通常为origin。
+!> 注意：无论有多少个分支，名称通常都会有一个主分支，名称为master， 连接名称通常为origin。
 
 ### 查看|新建
 
@@ -264,13 +264,29 @@ git checkout -b 新建分支名称
 ### 切换|提交
 
 ```
-# 切换分支（如果包含还未提交的工作，切换会失败，可以先提交历史区再切换）
+# 切换分支
 git checkout 要切换到的分支
-
-# 舍弃当前改动强行切换分支（慎用）
-git checkout -f 要切换到的分支
 ```
 ![QQ截图20210614034659](image/QQ截图20210614034659.png)
+
+这里有一点需要注意的是，上图新建了一个new分支，在new分支上进行了改动并未提交，然后切换到master分支上去，发现也把new分支的改动也给带了过去。原因在于：**工作区和暂存区都是公共区域，只要没有commit，任何修改都是在全局的，没有被纳入当前分支 dev 的版本管理，所以会被带到切换的分支。**
+
+如果在当前分支有修改后，想切换到另一个分支，有下面两种办法：
+
+```
+方法一：将当前分支的修改提交历史区再切换分支
+git add .
+git commit -m '提交描述'
+git checkout 要切换到的分支
+
+方法二：舍弃当前分支的修改再切换分支
+git checkout .
+git checkout 要切换到的分支
+或者直接
+git checkout -f 要切换到的分支
+```
+
+
 
 现在我们切换到新建的new分支，做出修改后并提交。
 
@@ -390,6 +406,21 @@ error: cannot pull with rebase: You have unstaged changes.
 
 ![QQ截图20210614053751](image/QQ截图20210614053751.png)
 
+这里还有一个命令就是：`git fetch`
+
+作用：创建并更新本地远程分支。即创建并更新origin/xxx 分支，拉取代码到origin/xxx分支上。
+
+```
+# 手动指定fetch的remote
+git fetch origin
+
+# 如果本地不存在branch2分支，则使用远程branch1分支在本地创建branch2(但不会切换到该分支)，如果本地存在branch2分支, 并且是`fast forward', 则自动合并两个分支,
+git fetch origin branch1:branch2
+
+# 等价于: git fetch origin master:branch2
+git fetch origin :branch2
+```
+
 有时候我们需要修改分支的额名称，就可以使用下面命令进行修改：
 
 ```
@@ -400,7 +431,7 @@ git branch -m master new_master
 
 ### 解决冲突
 
-冲突产生过程：甲乙两人都克隆了线上同一个分支，甲修改了A文件，并进行了提交合并线上分支，这个时候线上分支有甲的修改，乙的分支就和线上不一样了。这个时候乙也修改了A文件，进行提交就会报错，因为一个文件不可能有甲修改版和乙修改版，因此乙就需要解决冲突。
+冲突产生过程：甲乙两人都克隆了线上同一个分支，甲修改了A文件，并进行了提交合并线上分支，这个时候线上分支有甲的修改，乙的分支就和线上不一样了。这个时候乙也修改了A文件，进行提交就会报错，因为一个文件不可能同时有甲修改版和乙修改版，因此乙就需要解决冲突。
 
 ```
 # 拉取一次线上分支
@@ -409,10 +440,15 @@ git pull --rebase origin 线上分支名称
 # 查看冲突地方
 git diff
 
-# 解决冲突后进行提交
+# 这里就有三种方式处理这些冲突：
+方式一：解决冲突后进行提交
 git add .
 git rebase --continue
 git push -f origin 要提交的分支名称
+方式二：放弃合并回到以前提交但没有pull的状态，之前的提交的不会丢弃
+git rebase --abort
+方式三：跳过冲突，但会引起冲突的commits丢弃掉（慎用！！）
+git rebase --skip
 ```
 
 ## 进阶操作

@@ -195,7 +195,11 @@ git push 连接名称 分支名称
 
 ### 克隆仓库文件
 
-复制 *GitHub* 仓库地址
+克隆 *GitHub* 仓库到本地有两种方式：通过ssh url克隆仓库、通过http地址克隆仓库
+
+这两种方式的主要区别在于：**使用https url克隆对初学者来说会比较方便，复制https url然后到git Bash里面直接用clone命令克隆到本地就好了，但是每次fetch和push代码都需要输入账号和密码，这也是https方式的麻烦之处。而使用SSH url克隆却需要在克隆之前先配置和添加好SSH key，因此，如果你想要使用SSH url克隆的话，你必须是这个项目的拥有者。否则你是无法添加SSH key的，另外ssh默认是每次fetch和push代码都不需要输入账号和密码。**
+
+复制 *GitHub* 仓库的http地址
 
 ![QQ截图20190420150301](image/QQ截图20190420150301.png)
 

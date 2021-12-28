@@ -164,8 +164,11 @@ git checkout 路径/文件名称
 将文件的修改添加到暂存区：
 
 ```
-# 将当前仓库中所有文件的所有修改提交到暂存区
+# 监控工作区的状态树，使用它会把工作时的所有变化提交到暂存区，包括文件内容修改(modified)以及新文件(new)，但不包括被删除的文件。
 git add .
+# 即git add --update的缩写，仅监控已经被add的文件（即tracked file），他会将被修改的文件提交到暂存区。add -u 不会提交新文件（untracked file）。
+git add -U
+# 上面两个功能的合集（git add --all的缩写）
 git add -A
 
 # 提交指定文件的修改到暂存区

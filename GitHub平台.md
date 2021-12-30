@@ -29,7 +29,17 @@ mac/linux系统的hosts文件的位置如下：`/etc/host`
 
 ![QQ截图20211203140605](image/QQ截图20211203140605.png)
 
-最后保存并退出即可，再去访问Github网站你就会发现访问速度变快了。
+最后保存并退出即可，再去访问Github网站你就会发现访问速度变快了。有时国内访问 GitHub 会因为 DNS（域名解析服务）的问题出现**图片无法显示**的情况，可以通过**修改本机的 hosts 文件**直接对 GitHub 的资源链接进行域名解析来加以解决。我们可以把下面的内容添加到 hosts 文件的末尾，解决 GitHub 上图片无法显示的问题。
+
+```
+151.101.184.133    assets-cdn.github.com
+151.101.184.133    raw.githubusercontent.com
+151.101.184.133    gist.githubusercontent.com
+151.101.184.133    cloud.githubusercontent.com
+151.101.184.133    camo.githubusercontent.com
+```
+
+?> 使用 macOS 系统的读者可以参考[《macOS 下三种修改 hosts 文件的方法》](https://www.jianshu.com/p/752211238c1b)一文来修改 hosts 文件；使用 Windows 系统的读者可以参考[《在 Windows 上如何管理 hosts 文件》](https://sspai.com/post/43248)一文来进行操作。
 
 ## 功能模块
 

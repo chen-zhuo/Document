@@ -129,7 +129,7 @@ docsify serve 项目文件夹名称
 <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
 ```
 
-设置好以后，**`index.html` 文件会搜索名称为 `_coverpage.md` 文件来作为封面**。我们新建一个`_coverpage.md` 文件添加部分内容：
+**设置好以后，`index.html` 文件会搜索名称为 `_coverpage.md` 文件来作为封面**。我们新建一个`_coverpage.md` 文件添加部分内容：
 
 ```
 ![logo](/logo1.jpg)

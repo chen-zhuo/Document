@@ -18,7 +18,7 @@ Git Bash Here：命令行模式
 
 ![QQ截图20191124002422](image/QQ截图20191124002422.png)
 
-### *Git* 工作
+### Git工作
 
 Git 分区：
 
@@ -74,10 +74,10 @@ Linux、Git常用命令：
 
 ```
 # 设置用户名chen-zhuo
-git config --global user.name'用户名'
+git config --global user.name 用户名
 
 # 设置用户邮箱
-git config --global user.email'邮箱'
+git config --global user.email 邮箱
 ```
 
 通过下面命令可以查看用户信息是否配置好：
@@ -88,9 +88,23 @@ git config -l
 
 # 查看全局配置信息
 git config --global -l
+
+# 增加config信息
+git config --global --add 键 值
+
+# 删除config信息
+git config --global --unset 键
+
+# 修改config信息
+git config --global 键 值
+
+# 查询config信息
+git config --global 键
 ```
 
 ![QQ截图20211223104107](image/QQ截图20211223104107.png)
+
+!> 注意：如果配置里面多了一项 `credential.helper=store` 信息，可能会导致在克隆的时候找不到相应的仓库，删除即可。
 
 ### 新建本地仓库
 
@@ -294,13 +308,15 @@ git clone -b 分支名称 ssh链接/https链接
 
 方式区别：使用https链接克隆的仓库，每次fetch和push代码都需要输入账号和密码，这也是https方式的麻烦之处。使用SSH克隆之前需要先配置和添加好SSH key（你必须是这个项目的拥有者才能添加SSH key），每次fetch和push代码都不需要输入账号和密码。
 
-复制 *GitHub* 仓库的http地址：
+复制GitHub仓库的http地址：
 
 ![QQ截图20190420150301](image/QQ截图20190420150301.png)
 
 克隆远程仓库到本地：
 
 ![QQ截图20190420150559](image/QQ截图20190420150559.png)
+
+?> 提示：如果某台机器在克隆远程仓库的过程中出现问题，而其他的机器又能成功克隆该仓库，最直接的方法就是比较两台机器的配置信息，找出其中差别。
 
 ### 同步远程仓库
 
@@ -677,9 +693,8 @@ ssh -T git@github.com
 
 ![QQ截图20191124190748](image/QQ截图20191124190748.png)
 
-?> *GitHub* 允许你添加多个 *Key*。假定你有若干电脑，你⼀会儿在公司提交，⼀会儿在家里提交，只要把每台电脑的 *Key* 都添加到 *GitHub*，就可以在每台电脑上往 *GitHub* 推送 了。
+?> 提示： *GitHub* 允许你添加多个 *Key*。假定你有若干电脑，你⼀会儿在公司提交，⼀会儿在家里提交，只要把每台电脑的 *Key* 都添加到 *GitHub*，就可以在每台电脑上往 *GitHub* 推送 了。
 
-?> *Git* 的克隆仓库可以直接使用远程仓库的 *SSH* 地址。
+?> 提示：*Git* 的克隆仓库可以直接使用远程仓库的 *SSH* 地址。
 
-?> 更新新建的仓库最好先将仓库克隆到本地再更新，有 *SSH* 到时候更新完成，直接 *git push* 就好啦。
-
+?> 提示：更新新建的仓库最好先将仓库克隆到本地再更新，有 *SSH* 到时候更新完成，直接 *git push* 就好啦。

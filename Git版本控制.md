@@ -306,7 +306,7 @@ git clone ssh链接/https链接
 git clone -b 分支名称 ssh链接/https链接 
 ```
 
-方式区别：使用https链接克隆的仓库，每次fetch和push代码都需要输入账号和密码，这也是https方式的麻烦之处。使用SSH克隆之前需要先配置和添加好SSH key（你必须是这个项目的拥有者才能添加SSH key），每次fetch和push代码都不需要输入账号和密码。
+方式区别：**使用https链接克隆的仓库，每次fetch和push代码都需要输入账号和密码，这也是https方式的麻烦之处。使用SSH克隆之前需要先配置和添加好SSH key（你必须是这个项目的拥有者才能添加SSH key），每次fetch和push代码都不需要输入账号和密码。（建议通过ssh链接来克隆仓库）**
 
 复制GitHub仓库的http地址：
 

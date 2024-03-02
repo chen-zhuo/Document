@@ -29,8 +29,8 @@
 
 **安装好Node.js后，配置环境变量：**
 
-1. 修改用户变量PATH：后面添加`node安装路径\node`。
-2. 新增系统变量NODE_PATH：变量值为`node安装路径\node\node_modules`。
+1. 修改用户变量 PATH：后面添加`node安装路径\node`。
+2. 新增系统变量 NODE_PATH：变量值为`node安装路径\node\node_modules`。
 
 打开命令行，输入下面命令，**出现版本号，则说明安装成功**。
 
